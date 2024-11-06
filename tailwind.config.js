@@ -5,10 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
+    extend: {    
       colors: {
-        lightGray: '#f4f6fa',
-        lightBlue: '#e3e8f3',
+        "lightGray": "#f4f6fa",
+        "lightBlue": "#e3e8f3",
       },
       fontWeight:{
         "mid":"450",
@@ -23,6 +23,7 @@ export default {
       },
       spacing:{
         "lg":"48rem",
+        "200":"50rem",
       },
       textColor:{
         "dark-gray": "#313e51",
@@ -31,7 +32,11 @@ export default {
       backgroundColor:{
         "dark-gray": "#313e51",
         "hot-purple": "#a729f5",
-        "nice": "#f4f6fa"
+        "nice": "#f4f6fa",
+        "icon-html-opacity":"rgba(255,126,53,0.2)",
+        "icon-css-opacity":"rgba(47,216,135,0.2)",
+        "icon-js-opacity":"rgba(48,106,255,0.2)",
+        "icon-accessibility-opacity":"rgba(167,41,245,0.2)"
       },
       backgroundImage: {
         "desktop-light": "url('src/assets/images/pattern-background-desktop-light.svg')",

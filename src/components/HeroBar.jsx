@@ -1,9 +1,9 @@
 const HeroBar = () => {
   return (
     <>
-      <div className="flex pt-20 relative mb-24">
-        <img src="src\assets\images\icon-css.svg" alt="CSS icon" />
-        <div className="flex space-x-3 absolute right-0 pl-0">
+      <div className="flex lg:pt-20 md:pt-20 sm:pt-8  justify-end mb-28 ">
+        <img src="src\assets\images\icon-css.svg" alt="CSS icon" className="mr-auto justify-start"/>
+        <div className="flex space-x-3 absolute  pl-0">
             <img
             className="w-6 hidden"
             src="src\assets\images\icon-sun-light.svg"
