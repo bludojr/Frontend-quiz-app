@@ -9,6 +9,7 @@ export default {
       colors: {
         "lightGray": "#f4f6fa",
         "lightBlue": "#e3e8f3",
+        "hot-purple": "#a729f5",
       },
       fontWeight:{
         "mid":"450",
@@ -16,6 +17,7 @@ export default {
       fontSize:{
         "6.5xl":"4.125rem",
         "5.5xl":"3.375rem",
+        '2.5xl': ['1.75rem', '2.125rem']
       },
       margin:{
         "1.3":"0.325rem",
@@ -36,7 +38,8 @@ export default {
         "icon-html-opacity":"rgba(255,126,53,0.2)",
         "icon-css-opacity":"rgba(47,216,135,0.2)",
         "icon-js-opacity":"rgba(48,106,255,0.2)",
-        "icon-accessibility-opacity":"rgba(167,41,245,0.2)"
+        "icon-accessibility-opacity":"rgba(167,41,245,0.2)",
+        "opacity":"rgba(0,0,0,0.2)"
       },
       backgroundImage: {
         "desktop-light": "url('src/assets/images/pattern-background-desktop-light.svg')",
