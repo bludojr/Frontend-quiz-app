@@ -1,7 +1,7 @@
 const HeroBar = () => {
   return (
     <>
-      <div className="flex lg:pt-20 md:pt-20 sm:pt-8  justify-end mb-28 ">
+      <div className="flex lg:pt-20 md:pt-20 sm:pt-8  justify-end mb-28 transition-all ease-in-out duration-1000">
         <img src="src\assets\images\icon-css.svg" alt="CSS icon" className="mr-auto justify-start"/>
         <div className="flex space-x-3 absolute  pl-0">
             <img
@@ -15,7 +15,7 @@ const HeroBar = () => {
             alt="Sun icon dark theme"
           />
 
-          <button className="rounded-full bg-hot-purple h-7 my-auto w-12 ">
+          <button className="rounded-full bg-hot-purple h-7 my-auto w-12 transition-all ease-in-out duration-300">
             <div className="ml-1.3 active:ml-6 after:ml-6 w-5 h-5 bg-white rounded-3xl text-white my-auto"></div>
           </button>
 
