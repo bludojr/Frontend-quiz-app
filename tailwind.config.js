@@ -5,6 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens:{
+      'ssm': '320px',
+      'sm' : '480px',
+      'md' : '768px',
+      'lg' : '1024px'
+    },
     extend: {    
       colors: {
         "lightGray": "#f4f6fa",
@@ -26,6 +32,7 @@ export default {
       spacing:{
         "lg":"48rem",
         "200":"50rem",
+        "6.5":"1.6rem",
       },
       textColor:{
         "dark-gray": "#313e51",

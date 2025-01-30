@@ -1,9 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import RootLayout from "./layout/RootLayout";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Routes,
   RouterProvider,
   Route,
 } from "react-router-dom";
@@ -13,9 +15,7 @@ import HTML from "./pages/HTML";
 import CSS from "./pages/CSS";
 import JS from "./pages/JS"
 import Accessibility from "./pages/Accessibility";
-import RootLayout from "./layout/RootLayout";
-import { store } from "./app/store";
-import { Provider } from "react-redux";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
