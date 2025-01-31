@@ -9,7 +9,7 @@ const HeroBar = () => {
    
   return (
     <>
-      <div className="flex lg:pt-20 md:pt-20 sm:pt-12 px-4  justify-end mb-28 transition-all ease-in-out duration-1000">
+      <div className="flex lg:pt-20 md:pt-20 sm:pt-12  justify-end lg:mb-28 md:mb-28 sm:mb-12 transition-all ease-in-out duration-1000">
         <img src="src\assets\images\icon-css.svg" alt="CSS icon" className="mr-auto justify-start"/>
         <div className="flex space-x-3 absolute  pl-0">
             <img

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { setQuestions, setLoading, setError } from '../features/questionsSlice';
+import { isDarkModeSelector } from '../features/modeSlice';
+
 
 const MCQ = ({ quizType }) => {
   const dispatch = useDispatch();
@@ -13,6 +15,8 @@ const MCQ = ({ quizType }) => {
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const isDarkMode = useSelector(isDarkModeSelector);
+
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -39,7 +43,6 @@ const MCQ = ({ quizType }) => {
   const totalQuestions = currentQuestions.length;
 
   const handleSubmit = () => {
-    // Check if selected answer matches the correct answer text
     const isAnswerCorrect = currentQuestion.options[selectedAnswer] === currentQuestion.answer;
     
     setIsCorrect(isAnswerCorrect);
@@ -63,7 +66,7 @@ const MCQ = ({ quizType }) => {
   return (
     <div className="flex-col space-y-6 max-w-200 flex-grow min-w-72">
       <div className="space-y-6">
-        <h2 className="text-2xl font-medium text-dark-gray">{currentQuestion.question}</h2>
+        <h2 className={`${isDarkMode?'text-white': 'text-dark-gray'} text-2xl font-medium`}>{currentQuestion.question}</h2>
         <div className="space-y-4">
           {currentQuestion.options.map((option, optIndex) => (
             <button 
