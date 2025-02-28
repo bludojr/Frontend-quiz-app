@@ -15,6 +15,7 @@ import HTML from "./pages/HTML";
 import CSS from "./pages/CSS";
 import JS from "./pages/JS"
 import Accessibility from "./pages/Accessibility";
+import Error404 from "./pages/Error404";
 
 
 const router = createBrowserRouter(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="CSS" element={<CSS />} />
       <Route path="JavaScript" element={<JS />} />
       <Route path="Accessibility" element={<Accessibility />} />
+      <Route path="*" element={<Error404/>} />
     </>
   )
 );
