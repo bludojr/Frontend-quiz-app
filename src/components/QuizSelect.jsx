@@ -14,10 +14,10 @@ const Objectives = ({ label, bgClass, path }) => {
   return (
     <NavLink
       to={path}
-      className={`pl-6 flex space-x-5 shadow-md ${isDarkMode? 'bg-[#3c4c67] text-white' : 'bg-nice text-white'} h-20 w-full rounded-3xl transition-all ease-in-out duration-1000`}
+      className={`pl-6 flex space-x-5 shadow-md ${isDarkMode? 'bg-soft-gray text-white' : 'bg-nice text-white'} h-20 w-full rounded-3xl transition-all  duration-1000`}
     >
       <Picture bgClass={bgClass} />
-      <div className={`transition-all ease-in-out duration-1000  my-auto text-3xl font-medium ${isDarkMode? 'text-slate-100' : 'text-dark-gray'}`}>{label}</div>
+      <div className={`transition-all  duration-1000  my-auto text-3xl font-medium ${isDarkMode? 'text-slate-100' : 'text-dark-gray'}`}>{label}</div>
     </NavLink>
   );
 };

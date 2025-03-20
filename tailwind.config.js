@@ -6,16 +6,20 @@ export default {
   ],
   theme: {
     screens:{
-      'ssm': '320px',
+      'xsm': '240px',
+      'sssm': '321px',
+      'ssm': '380px',
       'sm' : '480px',
       'md' : '768px',
-      'lg' : '1024px'
+      'lg' : '1025px',
+      'xlg' : '1998px',
     },
     extend: {    
       colors: {
         "lightGray": "#f4f6fa",
         "lightBlue": "#e3e8f3",
         "hot-purple": "#a729f5",
+        "soft-gray": "#3c4c67"
       },
       fontWeight:{
         "mid":"450",
@@ -23,6 +27,7 @@ export default {
       fontSize:{
         "6.5xl":"4.125rem",
         "5.5xl":"3.375rem",
+        "4.5xl":"2.625rem",
         '2.5xl': ['1.75rem', '2.125rem']
       },
       margin:{
@@ -31,17 +36,21 @@ export default {
       },
       spacing:{
         "lg":"48rem",
+        "124":"26rem",
         "200":"50rem",
         "6.5":"1.6rem",
       },
       textColor:{
         "dark-gray": "#313e51",
         "hot-purple": "#a729f5",
+        "nice" : "#f4f6fa",
+        "lightBlue": "#e3e8f3",
       },
       backgroundColor:{
         "dark-gray": "#313e51",
         "hot-purple": "#a729f5",
         "nice": "#f4f6fa",
+        "red": "#c85053",
         "icon-html-opacity":"rgba(255,126,53,0.2)",
         "icon-css-opacity":"rgba(47,216,135,0.2)",
         "icon-js-opacity":"rgba(48,106,255,0.2)",
@@ -55,10 +64,10 @@ export default {
         "tablet-dark": "url('src/assets/images/pattern-background-tablet-dark.svg')",
         "mobile-light": "url('src/assets/images/pattern-background-mobile-light.svg')",
         "mobile-dark": "url('src/assets/images/pattern-background-mobile-dark.svg')",
-        "icon-html":"url('src/assets/images/icon-html.svg')",
-        "icon-css":"url('src/assets/images/icon-css.svg')",
-        "icon-js":"url('src/assets/images/icon-js.svg')",
-        "icon-accessibility":"url('src/assets/images/icon-accessibility.svg')"
+        "icon-html":"url('src/assets/icons/icon-html.svg')",
+        "icon-css":"url('src/assets/icons/icon-css.svg')",
+        "icon-js":"url('src/assets/icons/icon-js.svg')",
+        "icon-accessibility":"url('src/assets/icons/icon-accessibility.svg')"
       },
       fontFamily: {
         "rubik": "rubik",
