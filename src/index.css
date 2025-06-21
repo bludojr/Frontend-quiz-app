@@ -3,9 +3,17 @@
 @tailwind utilities;
 @font-face {
     font-family: "rubik";
-    src: url('src/assets/fonts/Rubik-VariableFont_wght.ttf');
+    src: url('/assets/fonts/Rubik-VariableFont_wght.ttf');
 }
 @font-face {
     font-family: "rubik-italic";
-    src: url('src/assets/fonts/Rubik-Italic-VariableFont_wght.ttf');
+    src: url('/assets/fonts/Rubik-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: "rubik-static";
+    src: url('/assets/fonts/static/Rubik-Medium.ttf');
+}
+@font-face {
+    font-family: "rubik-italic-static";
+    src: url('/assets/fonts/static/Rubik-Italic.ttf');
 }

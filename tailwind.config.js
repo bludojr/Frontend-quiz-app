@@ -14,7 +14,16 @@ export default {
       'lg' : '1025px',
       'xlg' : '1998px',
     },
-    extend: {    
+    extend: {
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' }
+        }
+      },
+      animation: {
+        shimmer: 'shimmer 1.5s infinite'
+      },    
       colors: {
         "lightGray": "#f4f6fa",
         "lightBlue": "#e3e8f3",
@@ -58,20 +67,16 @@ export default {
         "opacity":"rgba(0,0,0,0.2)"
       },
       backgroundImage: {
-        "desktop-light": "url('src/assets/images/pattern-background-desktop-light.svg')",
-        "desktop-dark": "url('src/assets/images/pattern-background-desktop-dark.svg')",
-        "tablet-light": "url('src/assets/images/pattern-background-tablet-light.svg')",
-        "tablet-dark": "url('src/assets/images/pattern-background-tablet-dark.svg')",
-        "mobile-light": "url('src/assets/images/pattern-background-mobile-light.svg')",
-        "mobile-dark": "url('src/assets/images/pattern-background-mobile-dark.svg')",
-        "icon-html":"url('src/assets/icons/icon-html.svg')",
-        "icon-css":"url('src/assets/icons/icon-css.svg')",
-        "icon-js":"url('src/assets/icons/icon-js.svg')",
-        "icon-accessibility":"url('src/assets/icons/icon-accessibility.svg')"
+        "desktop-light": "url('/assets/images/pattern-background-desktop-light.svg')",
+        "desktop-dark": "url('/assets/images/pattern-background-desktop-dark.svg')",
+        "tablet-light": "url('/assets/images/pattern-background-tablet-light.svg')",
+        "tablet-dark": "url('/assets/images/pattern-background-tablet-dark.svg')",
+        "mobile-light": "url('/assets/images/pattern-background-mobile-light.svg')",
+        "mobile-dark": "url('/assets/images/pattern-background-mobile-dark.svg')",
       },
       fontFamily: {
-        "rubik": "rubik",
-        "rubik-italic": "rubik-italic" 
+        "rubik": ["Rubik", "Montserrat", "sans-serif"],
+        "rubik-italic": ["Rubik-Italic", "Montserrat Italic", "sans-serif"]
       }
     },
   },

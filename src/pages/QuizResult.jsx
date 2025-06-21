@@ -1,18 +1,42 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { isDarkModeSelector } from "../features/modeSlice";
-import Background from "./Background";
-import Body from "./Body";
-import TopBar from "./TopBar";
+import Background from "../components/Background";
+import Body from "../components/Body";
+import TopBar from "../components/TopBar";
+
+const icons = [
+  {
+    name: "HTML",
+    iconClass: "bg-icon-html bg-icon-html-opacity",
+    path: "HTML",
+    src: htmlIcon,
+  },
+  {
+    name: "CSS",
+    iconClass: "bg-icon-css bg-icon-css-opacity",
+    path: "CSS",
+    src: cssIcon,
+  },
+  {
+    name: "JavaScript",
+    iconClass: "bg-icon-js bg-icon-js-opacity",
+    path: "JavaScript",
+    src: javascriptIcon,
+  },
+  {
+    name: "Accessibility",
+    iconClass: "bg-icon-accessibility bg-icon-accessibility-opacity",
+    path: "Accessibility",
+    src: accessibilityIcon,
+  },
+];
 
 const QuizResult = ({ score, totalQuestions, quizType }) => {
   const isDarkMode = useSelector(isDarkModeSelector);
   const navigate = useNavigate();
 
   return (
-    <Background>
-      <TopBar />
-      <Body>
         <div className="flex flex-col max-h-200 items-center justify-center w-full space-y-8 transition-all duration-1000">
           <h1 className={`text-6xl font-bold ${isDarkMode ? "text-white" : "text-dark-gray"}`}>
             Quiz Complete!
@@ -39,8 +63,6 @@ const QuizResult = ({ score, totalQuestions, quizType }) => {
             </span>
           </button>
         </div>
-      </Body>
-    </Background>
   );
 };
 

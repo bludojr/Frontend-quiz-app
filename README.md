@@ -1,6 +1,6 @@
 # Frontend Quiz App
 
-Challenge your frontend development expertise with this interactive quiz application! Test your skills in **HTML**, **CSS**, **JavaScript**, and **Accessibility** through a series of carefully crafted questions. Built with React and Tailwind, this app offers a modern, responsive interface with dark mode support and real-time progress tracking.
+ This is an interactive quiz application to challenge your frontend development expertise! Test your skills in **HTML**, **CSS**, **JavaScript**, and **Accessibility** through a series of carefully crafted questions. Built with React and Tailwind, this app offers a modern, responsive interface with dark mode support and real-time progress tracking.
 
 ## 📌 Table of Contents
 

@@ -10,7 +10,7 @@ const Background = ({ children }) => {
         isDarkMode
           ? "sssm:bg-mobile-dark sssm:bg-dark-gray sm:bg-mobile-dark sm:bg-dark-gray md:bg-tablet-dark lg:bg-desktop-dark bg-dark-gray"
           : "sssm:bg-mobile-light sm:bg-mobile-light md:bg-tablet-light lg:bg-desktop-light bg-nice"
-      } font-rubik lg:px-32 md:px-20 ssm:px-4 sssm:px-2`}
+      } font-rubik xlg:px-36 lg:px-32 md:px-20 ssm:px-4 sssm:px-2`}
     >
       {children}
     </div>

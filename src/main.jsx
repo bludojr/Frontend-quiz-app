@@ -10,7 +10,6 @@ import {
   Route,
 } from "react-router-dom";
 import "./index.css";
-import App from "./pages/App";
 import HTML from "./pages/HTML";
 import CSS from "./pages/CSS";
 import JS from "./pages/JS"

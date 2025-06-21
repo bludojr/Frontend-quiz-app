@@ -5,18 +5,21 @@ import { setQuestions, setLoading, setError } from "../features/questionsSlice";
 import { isDarkModeSelector } from "../features/modeSlice";
 import ProgressBar from "./ProgressBar";
 import { correctIcon, incorrectIcon } from "../constants/icons";
+import LoadingComponent from "./LoadingComponent";
+import FailedLoading from "./FailedLoading";
+import QuizComplete from "./QuizComplete";
 
 const MCQ = ({ quizType }) => {
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questionsState.questions);
   const status = useSelector((state) => state.questionsState.status);
-  const error = useSelector((state) => state.questionsState.error);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const isDarkMode = useSelector(isDarkModeSelector);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -34,8 +37,8 @@ const MCQ = ({ quizType }) => {
     }
   }, [status, dispatch]);
 
-  if (status === "loading") return <div>Loading...</div>;
-  if (status === "failed") return <div>Error: {error}</div>;
+  if (status === "loading") return <LoadingComponent />;
+  if (status === "failed") return <FailedLoading />;
 
   const currentQuiz = questions.find((quiz) => quiz.title === quizType);
   const currentQuestions = currentQuiz?.questions || [];
@@ -58,11 +61,17 @@ const MCQ = ({ quizType }) => {
         setCurrentQuestionIndex((prev) => prev + 1);
         setSelectedAnswer(null);
         setShowFeedback(false);
+      } else {
+        setQuizCompleted(true); // Show results after the last question
       }
     }, 3000);
   };
 
   if (!currentQuestion) return null;
+
+  if (quizCompleted) {
+    return <QuizComplete />; // TODO create a UseContext api in order to use this component
+  }
 
   return (
     <div className="lg:flex lg:flex-row lg:justify-between w-full lg:gap-x-20  xsm:flex-col xsm:space-y-2 sssm:space-y-2 ssm:space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-0  ">
@@ -103,15 +112,15 @@ const MCQ = ({ quizType }) => {
                     
                     ${
                       showFeedback
-                          ? option === currentQuestion.answer
-                              ? "ring-[#4edc9a] ring-4" // Correct answer - green ring
-                              : selectedAnswer === optIndex
-                                  ? "ring-[#c85053] ring-4" // Wrong answer - red ring
-                                  : "" // No ring for other options during feedback
+                        ? option === currentQuestion.answer
+                          ? "ring-[#4edc9a] ring-4" // Correct answer - green ring
                           : selectedAnswer === optIndex
-                              ? "ring-hot-purple ring-4" // Selected before submission - purple ring
-                              : "hover:border-hot-purple hover:border-4" // Default hover state
-                  }
+                          ? "ring-[#c85053] ring-4" // Wrong answer - red ring
+                          : "" // No ring for other options during feedback
+                        : selectedAnswer === optIndex
+                        ? "ring-hot-purple ring-4" // Selected before submission - purple ring
+                        : "hover:border-hot-purple hover:border-4" // Default hover state
+                    }
                     `}
               onClick={() => !showFeedback && setSelectedAnswer(optIndex)}
               disabled={showFeedback}
@@ -119,18 +128,18 @@ const MCQ = ({ quizType }) => {
               <div
                 className={`py-3 w-12 flex-none my-auto p-1 text-center font-rubik md:text-2.5xl sm:text-2xl sm:py-2 xsm:px-1 font-semibold rounded-md ${
                   showFeedback
-                      ? option === currentQuestion.answer
-                          ? "bg-[#4edc9a] text-white" // Correct answer - green background
-                          : selectedAnswer === optIndex
-                              ? "bg-[#c85053] text-white" // Wrong answer - red background
-                              : "bg-lightBlue text-gray-500" // Other options during feedback
+                    ? option === currentQuestion.answer
+                      ? "bg-[#4edc9a] text-white" // Correct answer - green background
                       : selectedAnswer === optIndex
-                          ? "bg-hot-purple text-white" // Selected before submission
-                          : "bg-lightBlue text-gray-500 group-hover:text-hot-purple" // Default state
-              }`}
+                      ? "bg-[#c85053] text-white" // Wrong answer - red background
+                      : "bg-lightBlue text-gray-500" // Other options during feedback
+                    : selectedAnswer === optIndex
+                    ? "bg-hot-purple text-white" // Selected before submission
+                    : "bg-lightBlue text-gray-500 group-hover:text-hot-purple" // Default state
+                }`}
               >
                 {String.fromCharCode(65 + optIndex)}
-              </div> 
+              </div>
               <div
                 className={`my-auto md:text-2.5xl sm:text-2xl  font-medium ${
                   isDarkMode ? "text-lightBlue" : "text-dark-gray"
